@@ -1,0 +1,18 @@
+---
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Apply users Actions"
+  user:
+    name: "{{ item.name }}"
+    groups: "{{ item.group | default( item.name )}}"
+    password: "{{ item.password | default(omit) }}"
+    skeleton: "{{ item.homepath }}/{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+    shell: "{{ item.shell | default('/bin/bash') }}"
+    remove: true
+  with_items: "{{ users }}"
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Set up authorized_keys for users"
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.key }}"
+  when: "item.key is defined and (item.state is not defined or item.state != 'absent')"
+  with_items: "{{ users }}"

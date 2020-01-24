@@ -1,0 +1,8 @@
+---
+- name: Converge
+  hosts: all
+
+  roles:
+    - role: ansible-role-users
+      users:
+        - {state: 'present', name: 'redbeard28', group: 'redbeard28', password:, key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC1M024hejJnsZnTGashxVaJoOqWIaadpg0XE20BbA5/5E+EfKmJ4uiswismF6ts9qsWoWNK5XXRZxysOjMSFdDyDcT6xcDbkUvkdbweJNHZgsv2sxHbXFrF60z0XJXRKuCQK9vdiktRbcgBkUFCANelIK7+Ru6/H57TubLLyieSfmnZmilekBDkFBwINwQ/lfqZrOedg8Cm3Fo2kMMrHFtu6EgO+Dw7iDJM6AX41hTq7yVmWXU9uggYljloohH2NDarLvAM43VRQuXdIguKcoto95FDq7lIRDhLQVwWRCCXSaCo4IlNhAl6sfFgTIRJPxUBs6I9Bb8o9MgtNQv2Okq9t1TzhLhYyo3u4shvh16n6fEWrfjtS/LRoOnFMOj0O+gAusV6Wrd8+xDzLSAjFQgNQY416EOir3/1wJGcMHPIRkQPlYql3m2P42fSZLJUs1zO1zInhdPaWCtE7KbVduhyICbKM8nUX0qtdSo2nQCxa6Qr35ULgDhjczQgPLmCfpV3D8R1B6r68mx7XrZTdUTau+XIo9mXBP1GtttCTSeafzhdJ1yvJj+7xBqH1jQ90pM0nrrWfMe+wXQ/aya43IZb67207Iw84llfeMiJG660yZemH3n4+gZusD/DOthsT1gJSOtIJmwh5pDlcYWvmmMxxDhXwgG/ofeglubOP4PWw==', shell: '/bin/bash', homepath: '/home'}

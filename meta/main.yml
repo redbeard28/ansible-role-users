@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: Jeremie CUADRADO
+  role_name: users
+  description: Ansible role create users with ssh pub key. NO PRIVATE KEY
+  license: GPLv3
+  company: Redbeard-Consulting
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: Debian
+      versions:
+        - all
+
+  galaxy_tags:
+    - users
+    - system
+    - deployment
+    - prepare
+
+  dependencies:
+    - src: redbeard28.bootstrap
+    - src: redbeard28.basetools

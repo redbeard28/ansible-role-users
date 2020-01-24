@@ -1,0 +1,11 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: false
+  become: true
+
+  roles:
+    - role: redbeard28.groups
+      mygroups:
+        - {name: 'redbeard28', gid: 1000, state: 'present'}
+        - {name: 'tata', state: 'present'}
