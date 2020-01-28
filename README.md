@@ -35,7 +35,7 @@ state[*](https://docs.ansible.com/ansible/latest/modules/user_module.html) means
 ```yaml
 ---
 users:
-  - { state: 'present', name: 'myname', group: 'mygroup', password: {{ vault_shadow_password }}, key: {{ vault_ssh_pub_key }}, shell: '/bin/ksh', homepath: '/home' }
+  - { state: 'present', name: 'myname', group: 'mygroup', password: {{ vault_password | password_hash('sha512') }}, key: {{ vault_ssh_pub_key }}, shell: '/bin/ksh', homepath: '/home' }
 ```
 
 Dependencies
